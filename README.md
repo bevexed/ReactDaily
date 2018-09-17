@@ -10,7 +10,7 @@ import ReactDom from 'react-dom' //把创建好的组件放在浏览器上展示
 ```
 3. 创建虚拟Dom元素
 > 参数 1 ：创建元素的类型、名称 ，<br>
-  参数 2 ：创建元素的属性 ，<br>
+  参数 2 ：创建元素的属性,接收对象{id:'',className:''}或null ，<br>
   参数 3 ：子节点
 ```
 const myh1 = React.creatElemet(h1, null, 'H1子节点')
