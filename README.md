@@ -55,8 +55,32 @@ ReactDom.render(myh1,document.getElementById('app'))
 >          ]
 > const <div>{a}</div>
 >```
-> 5. 插入一个数组 (key给被控制元素的最外层)
+> 6. 插入一个数组 (key给被控制元素的最外层)
 >```
 > const a = [1,2,3]
 > const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
+>```
+> 7. class => className ； for => htmlFor
+6. React中创建组件
+> 1.创建构造函数 (必须返回值)
+>```
+>function H1() {
+>    return <h1>1<h1>
+>    return null //什么都不渲染
+>}
+>
+>//接受参数
+>let dog = {
+>   age = 3
+>}
+>function H1(props) {
+>    return <h1>{props.name}<h1>
+>    return null //什么都不渲染
+>}
+>
+>//渲染组件
+>React.render(
+>   <H1 name="dog.name"></H1>
+>,getElementById('app'))
+>
 >```
