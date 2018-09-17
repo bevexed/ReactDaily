@@ -80,7 +80,15 @@ ReactDom.render(myh1,document.getElementById('app'))
 >
 >//渲染组件
 >React.render(
->   <H1 name="dog.age"></H1>
+>   <H1 age="dog.age"></H1>
 >,getElementById('app'))
+>```
+>2. jsx文件引入
+>```
+>import React from 'react'
 >
+>export default function Hellow(props) {
+>    console.log(props)
+>    return <div>Hellow</div>
+>}
 >```

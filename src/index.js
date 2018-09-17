@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+import Hellow from './components/Hellow.jsx'
+
 const myh1 = React.createElement('h1', null, '这是一个子节点')
 let a = true;
 let b = 123;
@@ -25,6 +27,7 @@ const div =
         {arr.map(i => <h3 key={i}>{i}</h3>)}
         <h1>这是一个标签</h1>
         <H1 age={dog.age}></H1>
+        <Hellow></Hellow>
     </div>
 ReactDom.render(div, document.getElementById('app'))
 
