@@ -11,7 +11,8 @@ import ReactDom from 'react-dom' //把创建好的组件放在浏览器上展示
 3. 创建虚拟Dom元素
 > 参数 1 ：创建元素的类型、名称 ，<br>
   参数 2 ：创建元素的属性,接收对象{id:'',className:''}或null ，<br>
-  参数 3 ：子节点
+  参数 3 ：子节点 <br>
+  参数 n ：其他子节点
 ```
 const myh1 = React.creatElemet(h1, null, 'H1子节点')
 ```
@@ -21,5 +22,41 @@ const myh1 = React.creatElemet(h1, null, 'H1子节点')
 ```
 ReactDom.render(myh1,document.getElementById('app'))
 ```
-
-```
+5. 运用JSX语法
+> 需要babel转换 <br>
+>```
+>const myh1 = <div id='div'>123</div>
+>```
+> 1. 可以渲染字符串
+> ```
+> let a ='123'
+> const myh1 = <div id='div'>{a}</div>
+> ```
+> 2. 可以渲染数字
+>```
+> let a = 123
+> const r = <div id='div'>{a + 456}</div>
+>```
+> 3. 可以渲染布尔值
+>```
+> let a = true
+> const r = <div id='div'>{a? '真':'假'}
+>```
+> 4. 放入一个子标签
+>```
+> const h1 = <h1>231<h1>
+> const <div>{h1}</div>
+>```
+> 5. 插入一个JSX数组
+>```
+>const a = [
+>       <h1>1<h1>
+>       <h2>2<h2>
+>          ]
+> const <div>{a}</div>
+>```
+> 5. 插入一个数组 (key给被控制元素的最外层)
+>```
+> const a = [1,2,3]
+> const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
+>```
