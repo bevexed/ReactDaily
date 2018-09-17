@@ -11,7 +11,7 @@ let dog = {
 }
 
 function H1(props) {
-    return <h2>{props.name}</h2>
+    return <h2>{props.age}岁</h2>
 }
 
 
@@ -24,7 +24,7 @@ const div =
         {c}
         {arr.map(i => <h3 key={i}>{i}</h3>)}
         <h1>这是一个标签</h1>
-        <H1 name={dog.name}></H1>
+        <H1 age={dog.age}></H1>
     </div>
 ReactDom.render(div, document.getElementById('app'))
 

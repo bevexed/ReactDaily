@@ -74,13 +74,13 @@ ReactDom.render(myh1,document.getElementById('app'))
 >   age = 3
 >}
 >function H1(props) {
->    return <h1>{props.name}<h1>
+>    return <h1>{props.age}</h1>
 >    return null //什么都不渲染
 >}
 >
 >//渲染组件
 >React.render(
->   <H1 name="dog.name"></H1>
+>   <H1 name="dog.age"></H1>
 >,getElementById('app'))
 >
 >```
