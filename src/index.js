@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 import Hellow from './components/Hellow.jsx'
+import Test from './components/classReact.jsx'
+import List from './components/for'
 
 const myh1 = React.createElement('h1', null, '这是一个子节点')
 let a = true;
@@ -28,6 +30,10 @@ const div =
         <h1>这是一个标签</h1>
         <H1 age={dog.age}></H1>
         <Hellow></Hellow>
+        <br/>
+        <Test age={dog.age}></Test>
+        <br/>
+        <List></List>
     </div>
 ReactDom.render(div, document.getElementById('app'))
 

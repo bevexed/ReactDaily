@@ -1,4 +1,5 @@
 # REACT
+### 组件
 1. 安装react
 ```
 npm i react react-dom -S
@@ -91,4 +92,41 @@ ReactDom.render(myh1,document.getElementById('app'))
 >    console.log(props)
 >    return <div>Hellow</div>
 >}
+>```
+>3. class创建组件
+> > 1. this.state的数据可读可写
+> > 2. 有状态组件
+>```
+>export default class extends React.Component {
+>    constructor() {
+>          super()
+>          this.state = {
+>              msg: 'Hellow'
+>          }
+>      }>
+>   render {
+>       return <div>{this.props.age}</div>
+>   }
+>}
+>```
+### css 样式
+> 1.行内样式
+>```
+><h1 style={{fontSize: 12 + 'px'}}> </h1>
+>```
+> 2.直接引入css
+>```
+> import 'xxx.css'
+>```
+>3.以模块化的方式引入
+>```
+>//js
+>import xxx from 'xxx.scss'
+>//webpack
+>css-loader?modules
+>```
+### 绑定事件
+>1.格式
+>```
+><button onClick={()=>{}}>123</button>
 >```
