@@ -19,7 +19,7 @@ const r = <div id='div'>{a? '真':'假'}
 * 放入一个子标签
 ```jsx
 const h1 = <h1>231<h1>
-const <div>{h1}</div>
+const b = <div>{h1}</div>
 ```
 * 插入一个JSX数组
 ```jsx
@@ -27,7 +27,7 @@ const a = [
      <h1>1<h1>,
      <h2>2<h2>
         ]
-const <div>{a}</div>
+const b = <div>{a}</div>
 ```
 * 插入一个数组 (key给被控制元素的最外层)
 ```jsx
@@ -153,15 +153,56 @@ export default class A extend React.Component {
         })
     }
 }
-``
+```
 
 ### 赋值
 * this.setState
     * 方法执行是异步的
+    ```jsx
+    this.setState({
+        msg:'123'
+    },function(){
+        console.log(this.state.msg)
+    })
+    ```
+### 双向数据绑定
+1. 通过 onChange 事件监听文本框
+2. 在 onChange 事件中拿到文本框的值
+    * e.target.value
+    * this.refs.***
+3. 调用 setState 方法将最新的值同步到 state 中去
+* ref 对dom的引用
 ```jsx
-this.setState({
-    msg:'123'
-},function(){
-    console.log(this.state.msg)
-})
+export default class A extend React.Component {
+    constructor(){
+        super()
+        this.state = {
+            msg: '哈哈'
+        }
+    }
+
+    render(){
+        return <div>
+            <input type="text" style={{width:100%}} value={this.state.msg} onChange={(e)=>this.textChanged(e)} ref="text">
+        </div>
+    }
+
+    textChanged = (e) => {
+        console.log(e.target.value)
+        console.log(this.refs.text.value)
+        const newVal = e.target.value
+        this.setState({
+            msg: newVal
+        })
+    }
+}
+```
+
+### 注释
+    * 折叠注释
+```jsx
+// #region
+// 注释
+// endregion
+
 ```
