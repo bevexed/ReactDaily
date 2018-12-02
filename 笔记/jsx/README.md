@@ -2,27 +2,27 @@
 ### 基本语法
 > 可以将 JS 代码写在花括号里
 * 可以渲染字符串
-```
+```jsx
 let a ='123'
 const myh1 = <div id='div'>{a}</div>
 ```
 * 可以渲染数字
-```
+```jsx
 let a = 123
 const r = <div id='div'>{a + 456}</div>
 ```
 * 可以渲染布尔值
-```
+```jsx
 let a = true
 const r = <div id='div'>{a? '真':'假'}
 ```
 * 放入一个子标签
-```
+```jsx
 const h1 = <h1>231<h1>
 const <div>{h1}</div>
 ```
 * 插入一个JSX数组
-```
+```jsx
 const a = [
      <h1>1<h1>,
      <h2>2<h2>
@@ -30,7 +30,7 @@ const a = [
 const <div>{a}</div>
 ```
 * 插入一个数组 (key给被控制元素的最外层)
-```
+```jsx
 const a = [1,2,3]
 const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
 ```
@@ -38,20 +38,20 @@ const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
 ### 注释
 * 单行注释
     * 只能占一行
-    ```
+    ```jsx
     {
         // 注 释
     }
     ```
 * 多行注释
-    ```
+    ```jsx
     {/* 注释 */}
     ```
 
 ### 创建组件
 1. 创建构造函数 (必须返回值)
    * 构造函数创建
-    ```
+    ```jsx
     function H1() {
         // 组件中，必须放回 一个 合法的 JSX 虚拟DOM元素
         return <h1>1<h1>
@@ -75,7 +75,7 @@ const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
     ,getElementById('app'))
     ```
 2. jsx文件引入
-    ```
+    ```jsx
     import React from 'react'
 
     export default function Hellow(props) {
@@ -93,7 +93,7 @@ const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
     * 如果使用 class 定义组件，必须 让自己的组件，继承自 React.Component
     * 在组件内部必须有 render 函数
         * render函数必须返回合法的 jsx 虚拟Dom结构
-    ```
+    ```jsx
     export default class extends React.Component {
         constructor() {
               super()
@@ -110,16 +110,16 @@ const <div>{a.map(i => <h3  key={i}>i</h3>)}</div>
     ```
 ### css 样式
 * 行内样式
-```
+```jsx
 <h1 style={{fontSize: 12 + 'px'}}> </h1>
 ```
 * 直接引入css
-```
+```jsx
  import 'xxx.css'
 ```
 * 以模块化的方式引入
     * 默认在全局生效
-```
+```jsx
 //js
 import xxx from 'xxx.scss'
 //webpack
@@ -131,7 +131,7 @@ css-loader?modules
     * :global() 避模块化
 ### 绑定事件
 * 格式
-```
+```jsx
 export default class A extend React.Component {
     constructor(){
         super()
@@ -158,7 +158,7 @@ export default class A extend React.Component {
 ### 赋值
 * this.setState
     * 方法执行是异步的
-```
+```jsx
 this.setState({
     msg:'123'
 },function(){
