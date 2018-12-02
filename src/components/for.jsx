@@ -8,7 +8,8 @@ export default class List extends React.Component {
                 {id:1},
                 {id:2},
                 {id:3}
-            ]
+            ],
+            lists:{a:1,b:2}
         }
     }
     render(){
